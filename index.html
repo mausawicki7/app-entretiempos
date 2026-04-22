@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Propuesta Comercial — Entretiempos Psicología</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --navy: #1a2744;
@@ -27,7 +36,9 @@
       --radius-lg: 20px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
@@ -39,7 +50,8 @@
     /* ── PROGRESS BAR ── */
     #progress-bar {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       height: 3px;
       width: 0%;
       background: linear-gradient(90deg, var(--sage), var(--gold));
@@ -50,8 +62,10 @@
     /* ── NAV ── */
     nav {
       position: fixed;
-      top: 3px; left: 0; right: 0;
-      background: rgba(255,255,255,0.92);
+      top: 3px;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--neutral-200);
       z-index: 999;
@@ -85,7 +99,9 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--navy); }
+    .nav-links a:hover {
+      color: var(--navy);
+    }
 
     /* ── WRAPPER ── */
     .document {
@@ -108,24 +124,28 @@
     .cover::before {
       content: '';
       position: absolute;
-      top: -80px; right: -80px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(201,169,110,0.12) 0%, transparent 70%);
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .cover::after {
       content: '';
       position: absolute;
-      bottom: -100px; left: -60px;
-      width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(107,143,113,0.1) 0%, transparent 70%);
+      bottom: -100px;
+      left: -60px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(107, 143, 113, 0.1) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .cover-tag {
       display: inline-block;
-      background: rgba(201,169,110,0.2);
+      background: rgba(201, 169, 110, 0.2);
       color: var(--gold);
       font-size: 11px;
       font-weight: 600;
@@ -134,7 +154,7 @@
       padding: 6px 14px;
       border-radius: 100px;
       margin-bottom: 32px;
-      border: 1px solid rgba(201,169,110,0.3);
+      border: 1px solid rgba(201, 169, 110, 0.3);
     }
 
     .cover h1 {
@@ -147,11 +167,13 @@
       z-index: 1;
     }
 
-    .cover h1 span { color: var(--gold); }
+    .cover h1 span {
+      color: var(--gold);
+    }
 
     .cover-sub {
       font-size: 16px;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255, 255, 255, 0.6);
       margin-bottom: 48px;
       max-width: 540px;
     }
@@ -168,13 +190,13 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      color: rgba(255, 255, 255, 0.35);
       margin-bottom: 4px;
     }
 
     .cover-meta-item span {
       font-size: 14px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       font-weight: 500;
     }
 
@@ -191,7 +213,8 @@
     }
 
     .section-number {
-      width: 28px; height: 28px;
+      width: 28px;
+      height: 28px;
       background: var(--navy);
       color: var(--white);
       border-radius: 50%;
@@ -215,7 +238,7 @@
       border-radius: var(--radius);
       padding: 32px 36px;
       border: 1px solid var(--neutral-200);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
 
     .card p {
@@ -224,7 +247,9 @@
       line-height: 1.75;
     }
 
-    .card p + p { margin-top: 12px; }
+    .card p+p {
+      margin-top: 12px;
+    }
 
     /* ── PROBLEM CARD ── */
     .problem-card {
@@ -262,7 +287,8 @@
     .problem-list li::before {
       content: '!';
       flex-shrink: 0;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       background: #e8a84a;
       color: white;
       border-radius: 50%;
@@ -317,7 +343,7 @@
 
     .stack-table thead th {
       background: var(--navy);
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.08em;
@@ -326,10 +352,17 @@
       text-align: left;
     }
 
-    .stack-table thead th:first-child { border-radius: 8px 0 0 0; }
-    .stack-table thead th:last-child { border-radius: 0 8px 0 0; }
+    .stack-table thead th:first-child {
+      border-radius: 8px 0 0 0;
+    }
 
-    .stack-table tbody tr:nth-child(even) td { background: var(--neutral-50); }
+    .stack-table thead th:last-child {
+      border-radius: 0 8px 0 0;
+    }
+
+    .stack-table tbody tr:nth-child(even) td {
+      background: var(--neutral-50);
+    }
 
     .stack-table tbody td {
       padding: 14px 20px;
@@ -369,7 +402,7 @@
     }
 
     .module-card:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
       transform: translateY(-1px);
     }
 
@@ -403,7 +436,9 @@
     .timeline::before {
       content: '';
       position: absolute;
-      left: 9px; top: 8px; bottom: 8px;
+      left: 9px;
+      top: 8px;
+      bottom: 8px;
       width: 2px;
       background: linear-gradient(180deg, var(--navy) 0%, var(--sage) 100%);
       border-radius: 2px;
@@ -417,14 +452,18 @@
     .timeline-item::before {
       content: '';
       position: absolute;
-      left: -27px; top: 6px;
-      width: 12px; height: 12px;
+      left: -27px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
       background: var(--white);
       border: 2px solid var(--navy);
       border-radius: 50%;
     }
 
-    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
 
     .timeline-week {
       font-size: 11px;
@@ -466,7 +505,7 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255, 255, 255, 0.4);
       margin-bottom: 8px;
     }
 
@@ -480,7 +519,7 @@
 
     .pricing-main .price-sub {
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255, 255, 255, 0.5);
       margin-bottom: 28px;
     }
 
@@ -495,13 +534,13 @@
       justify-content: space-between;
       align-items: center;
       padding: 10px 14px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255, 255, 255, 0.07);
       border-radius: 8px;
     }
 
     .split-row span:first-child {
       font-size: 13px;
-      color: rgba(255,255,255,0.7);
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .split-row span:last-child {
@@ -556,7 +595,9 @@
       gap: 12px;
     }
 
-    .savings-banner .savings-icon { font-size: 24px; }
+    .savings-banner .savings-icon {
+      font-size: 24px;
+    }
 
     .savings-banner p {
       font-size: 13px;
@@ -564,7 +605,9 @@
       line-height: 1.4;
     }
 
-    .savings-banner strong { font-weight: 600; }
+    .savings-banner strong {
+      font-weight: 600;
+    }
 
     /* ── CONDITIONS ── */
     .conditions-list {
@@ -585,7 +628,8 @@
 
     .conditions-list li .check-icon {
       flex-shrink: 0;
-      width: 20px; height: 20px;
+      width: 20px;
+      height: 20px;
       background: var(--sage);
       border-radius: 50%;
       display: flex;
@@ -595,7 +639,8 @@
     }
 
     .conditions-list li .check-icon svg {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       stroke: white;
       stroke-width: 2.5;
       fill: none;
@@ -624,7 +669,8 @@
     }
 
     .acceptance-header .icon-box {
-      width: 48px; height: 48px;
+      width: 48px;
+      height: 48px;
       background: var(--navy);
       border-radius: 12px;
       display: flex;
@@ -706,7 +752,7 @@
 
     .field-group input:focus {
       border-color: var(--navy);
-      box-shadow: 0 0 0 3px rgba(26,39,68,0.08);
+      box-shadow: 0 0 0 3px rgba(26, 39, 68, 0.08);
     }
 
     .checkbox-row {
@@ -723,13 +769,19 @@
       transition: background 0.2s;
     }
 
-    .checkbox-row:hover { background: #f0e2c8; }
+    .checkbox-row:hover {
+      background: #f0e2c8;
+    }
 
-    .checkbox-row.checked { background: var(--sage-light); border-color: #a8cdb0; }
+    .checkbox-row.checked {
+      background: var(--sage-light);
+      border-color: #a8cdb0;
+    }
 
     .custom-checkbox {
       flex-shrink: 0;
-      width: 22px; height: 22px;
+      width: 22px;
+      height: 22px;
       border: 2px solid var(--neutral-400);
       border-radius: 5px;
       background: var(--white);
@@ -746,7 +798,8 @@
     }
 
     .custom-checkbox svg {
-      width: 12px; height: 12px;
+      width: 12px;
+      height: 12px;
       stroke: white;
       stroke-width: 2.5;
       fill: none;
@@ -766,7 +819,9 @@
       line-height: 1.6;
     }
 
-    .checkbox-text strong { color: var(--neutral-800); }
+    .checkbox-text strong {
+      color: var(--neutral-800);
+    }
 
     .accept-btn {
       width: 100%;
@@ -786,10 +841,12 @@
 
     .accept-btn:hover:not(:disabled) {
       background: var(--navy-light);
-      box-shadow: 0 4px 16px rgba(26,39,68,0.25);
+      box-shadow: 0 4px 16px rgba(26, 39, 68, 0.25);
     }
 
-    .accept-btn:active:not(:disabled) { transform: scale(0.99); }
+    .accept-btn:active:not(:disabled) {
+      transform: scale(0.99);
+    }
 
     .accept-btn:disabled {
       opacity: 0.45;
@@ -807,10 +864,13 @@
       padding: 32px 0 8px;
     }
 
-    .success-state.visible { display: block; }
+    .success-state.visible {
+      display: block;
+    }
 
     .success-checkmark {
-      width: 64px; height: 64px;
+      width: 64px;
+      height: 64px;
       background: var(--sage);
       border-radius: 50%;
       display: flex;
@@ -821,12 +881,18 @@
     }
 
     @keyframes pop {
-      0% { transform: scale(0); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .success-checkmark svg {
-      width: 30px; height: 30px;
+      width: 30px;
+      height: 30px;
       stroke: white;
       stroke-width: 2.5;
       fill: none;
@@ -863,7 +929,9 @@
       border-top: 1px solid var(--neutral-200);
     }
 
-    footer strong { color: var(--neutral-600); }
+    footer strong {
+      color: var(--neutral-600);
+    }
 
     /* ── DIVIDER ── */
     .divider {
@@ -881,42 +949,92 @@
 
     /* ── RESPONSIVE: TABLET (≤ 860px) ── */
     @media (max-width: 860px) {
-      .flows-grid { grid-template-columns: 1fr; }
-      .cover { padding: 56px 40px; }
-      .pricing-grid { grid-template-columns: 1fr; }
+      .flows-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cover {
+        padding: 56px 40px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
 
       /* stack table: hide "Por qué" on tablet, keep it readable */
       .stack-table thead th:last-child,
-      .stack-table tbody td:last-child { display: none; }
+      .stack-table tbody td:last-child {
+        display: none;
+      }
     }
 
     /* ── RESPONSIVE: MOBILE (≤ 620px) ── */
     @media (max-width: 620px) {
-      nav { padding: 0 16px; }
-      .nav-links { display: none; }
+      nav {
+        padding: 0 16px;
+      }
 
-      .document { padding: 72px 14px 56px; }
+      .nav-links {
+        display: none;
+      }
+
+      .document {
+        padding: 72px 14px 56px;
+      }
 
       .cover {
         padding: 40px 22px;
         margin-top: 72px;
         border-radius: 14px;
       }
-      .cover-sub { font-size: 14px; }
-      .cover-meta { gap: 20px 32px; }
 
-      .card { padding: 22px 20px; }
-      .card p { font-size: 14px; }
+      .cover-sub {
+        font-size: 14px;
+      }
 
-      .problem-card { padding: 22px 20px; }
-      .problem-list li { font-size: 13.5px; }
+      .cover-meta {
+        gap: 20px 32px;
+      }
 
-      .solution-highlight { grid-template-columns: 1fr; }
-      .modules-grid { grid-template-columns: 1fr; }
-      .pricing-grid { grid-template-columns: 1fr; }
-      .pricing-main { padding: 28px 24px; }
-      .pricing-main .price { font-size: 40px; }
-      .pricing-card-sm { padding: 20px 22px; }
+      .card {
+        padding: 22px 20px;
+      }
+
+      .card p {
+        font-size: 14px;
+      }
+
+      .problem-card {
+        padding: 22px 20px;
+      }
+
+      .problem-list li {
+        font-size: 13.5px;
+      }
+
+      .solution-highlight {
+        grid-template-columns: 1fr;
+      }
+
+      .modules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-main {
+        padding: 28px 24px;
+      }
+
+      .pricing-main .price {
+        font-size: 40px;
+      }
+
+      .pricing-card-sm {
+        padding: 20px 22px;
+      }
 
       /* Stack table: convert to card layout */
       .stack-table,
@@ -924,9 +1042,13 @@
       .stack-table tbody,
       .stack-table th,
       .stack-table td,
-      .stack-table tr { display: block; }
+      .stack-table tr {
+        display: block;
+      }
 
-      .stack-table thead { display: none; }
+      .stack-table thead {
+        display: none;
+      }
 
       .stack-table tbody tr {
         border: 1px solid var(--neutral-200);
@@ -961,622 +1083,750 @@
         gap: 12px;
         text-align: left;
       }
-      .timeline-footer-row > div:last-child { text-align: left; }
 
-      .acceptance-section { padding: 28px 18px; }
-      .acceptance-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .acceptance-summary { grid-template-columns: 1fr 1fr; }
-      .name-field-group { grid-template-columns: 1fr; }
+      .timeline-footer-row>div:last-child {
+        text-align: left;
+      }
 
-      .divider { margin: 36px 0; }
-      section { margin-bottom: 40px; }
+      .acceptance-section {
+        padding: 28px 18px;
+      }
+
+      .acceptance-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .acceptance-summary {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .name-field-group {
+        grid-template-columns: 1fr;
+      }
+
+      .divider {
+        margin: 36px 0;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
     }
 
     /* ── RESPONSIVE: SMALL MOBILE (≤ 400px) ── */
     @media (max-width: 400px) {
-      .cover { padding: 32px 16px; }
-      .document { padding: 68px 12px 48px; }
-      .card { padding: 18px 16px; }
-      .acceptance-summary { grid-template-columns: 1fr; }
-      .cover-meta { gap: 16px 24px; }
+      .cover {
+        padding: 32px 16px;
+      }
+
+      .document {
+        padding: 68px 12px 48px;
+      }
+
+      .card {
+        padding: 18px 16px;
+      }
+
+      .acceptance-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .cover-meta {
+        gap: 16px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<div id="progress-bar"></div>
+  <div id="progress-bar"></div>
 
-<nav>
-  <div class="nav-logo">Entretiempos Psicología</div>
-  <ul class="nav-links">
-    <li><a href="#problema">Contexto</a></li>
-    <li><a href="#solucion">Solución</a></li>
-    <li><a href="#alcance">Alcance</a></li>
-    <li><a href="#cronograma">Cronograma</a></li>
-    <li><a href="#inversion">Inversión</a></li>
-    <li><a href="#aceptacion">Aceptar</a></li>
-  </ul>
-</nav>
+  <nav>
+    <div class="nav-logo">Entretiempos Psicología</div>
+    <ul class="nav-links">
+      <li><a href="#problema">Contexto</a></li>
+      <li><a href="#solucion">Solución</a></li>
+      <li><a href="#alcance">Alcance</a></li>
+      <li><a href="#cronograma">Cronograma</a></li>
+      <li><a href="#inversion">Inversión</a></li>
+      <li><a href="#aceptacion">Aceptar</a></li>
+    </ul>
+  </nav>
 
-<div class="document">
+  <div class="document">
 
-  <!-- COVER -->
-  <div class="cover">
-    <div class="cover-tag">Propuesta Comercial Confidencial</div>
-    <h1>Plataforma a medida para<br /><span>Entretiempos Psicología</span></h1>
-    <p class="cover-sub">Rediseño completo de infraestructura digital — migración desde WordPress hacia una plataforma propia, estable y escalable.</p>
-    <div class="cover-meta">
-      <div class="cover-meta-item">
-        <label>Cliente</label>
-        <span>Lizette Margulis</span>
-      </div>
-      <div class="cover-meta-item">
-        <label>Desarrollador</label>
-        <span>Mauricio Sawicki</span>
-      </div>
-      <div class="cover-meta-item">
-        <label>Fecha</label>
-        <span>Abril 2026</span>
-      </div>
-      <div class="cover-meta-item">
-        <label>Versión</label>
-        <span>v1.0</span>
-      </div>
-      <div class="cover-meta-item">
-        <label>LinkedIn</label>
-        <a href="https://www.linkedin.com/in/mausa10/" target="_blank" rel="noopener" style="font-size:14px; color:rgba(255,255,255,0.85); font-weight:500; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.25);">linkedin.com/in/mausa10</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 1. CONTEXTO -->
-  <section id="problema">
-    <div class="section-label">
-      <div class="section-number">1</div>
-      <h2 class="section-title">El problema actual</h2>
-    </div>
-
-    <div class="card" style="margin-bottom:16px">
-      <p>La plataforma actual de Entretiempos Psicología corre sobre <strong>WordPress + WooCommerce + Ultimate Member Pro + PayPal</strong>. Esta combinación acumula conflictos constantes entre plugins, genera errores difíciles de reproducir y requiere intervención técnica permanente sin garantía de resolución.</p>
-      <p>Más de +600.000 seguidores en Instagram y una presencia real en Uruguay y LatAm merecen una infraestructura que funcione de manera confiable, sin parches ni workarounds.</p>
-    </div>
-
-    <div class="problem-card">
-      <h3>Síntomas identificados</h3>
-      <ul class="problem-list">
-        <li><span>Cuando un psicólogo paga la membresía, el rol "Psicólogo" no se asigna automáticamente — falla la sincronización entre WooCommerce Subscriptions y Ultimate Member.</span></li>
-        <li><span>El stack de plugins genera conflictos de versiones que se vuelven impredecibles con cada actualización.</span></li>
-        <li><span>El costo de infraestructura actual ronda los <strong>USD 500/año</strong> en licencias y hosting de WordPress.</span></li>
-        <li><span>Cada intervención técnica requiere un especialista en WordPress, no en el negocio real de la plataforma.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 2. SOLUCIÓN -->
-  <section id="solucion">
-    <div class="section-label">
-      <div class="section-number">2</div>
-      <h2 class="section-title">La solución propuesta</h2>
-    </div>
-
-    <div class="card" style="margin-bottom:20px">
-      <p>Desarrollar una <strong>plataforma web a medida</strong>, construida desde cero con tecnologías modernas y probadas. Esto elimina la dependencia de plugins de terceros, da control total sobre el comportamiento del sistema y reduce el costo operativo anual de forma drástica.</p>
-      <p>La nueva plataforma es una <strong>web app responsive</strong> — accesible desde cualquier navegador, optimizada para móvil, tablet y escritorio. No requiere descarga ni instalación por parte del usuario.</p>
-    </div>
-
-    <div class="solution-highlight">
-      <div class="solution-item">
-        <div class="icon">🔒</div>
-        <h4>Control total del sistema</h4>
-        <p>Sin plugins ni dependencias externas. Cada comportamiento es código propio, testeable y predecible.</p>
-      </div>
-      <div class="solution-item">
-        <div class="icon">💳</div>
-        <h4>Pagos recurrentes reales</h4>
-        <p>dLocal Go gestiona suscripciones automáticas en moneda local para toda LatAm y EEUU. Sin intermediarios complejos.</p>
-      </div>
-      <div class="solution-item">
-        <div class="icon">📉</div>
-        <h4>Costo reducido 84%</h4>
-        <p>De USD 500/año a USD 80/año de infraestructura — sin licencias de plugins ni hosting caro.</p>
-      </div>
-      <div class="solution-item">
-        <div class="icon">🚀</div>
-        <h4>Escalable desde el día 1</h4>
-        <p>Arquitectura preparada para Fase 2: videollamadas, app móvil, Mercado Pago y mensajería interna.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 3. STACK -->
-  <section id="stack">
-    <div class="section-label">
-      <div class="section-number">3</div>
-      <h2 class="section-title">Stack tecnológico</h2>
-    </div>
-
-    <div class="card" style="padding:0; overflow:hidden;">
-      <table class="stack-table">
-        <thead>
-          <tr>
-            <th>Tecnología</th>
-            <th>Rol en el proyecto</th>
-            <th>Por qué</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="tech-badge">Next.js</span></td>
-            <td>Frontend — web app responsive</td>
-            <td>El estándar de la industria para apps React en producción. Deploy instantáneo en Vercel.</td>
-          </tr>
-          <tr>
-            <td><span class="tech-badge">Supabase</span></td>
-            <td>Base de datos, autenticación y storage</td>
-            <td>PostgreSQL gestionado + auth robusta + storage para fotos de perfil, sin configuración compleja.</td>
-          </tr>
-          <tr>
-            <td><span class="tech-badge">Vercel</span></td>
-            <td>Deploy y hosting</td>
-            <td>Integración nativa con Next.js. CDN global, SSL automático, deploys en segundos.</td>
-          </tr>
-          <tr>
-            <td><span class="tech-badge">dLocal Go</span></td>
-            <td>Pagos y suscripciones recurrentes</td>
-            <td>Cubre toda LatAm y EEUU con métodos de pago locales. Suscripciones automáticas nativas: el psicólogo paga en su moneda local y Entretiempos recibe en la moneda de la empresa.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 4. ALCANCE -->
-  <section id="alcance">
-    <div class="section-label">
-      <div class="section-number">4</div>
-      <h2 class="section-title">Alcance del MVP</h2>
-    </div>
-
-    <div class="card" style="margin-bottom:20px">
-      <p>El MVP (producto mínimo viable) incluye todos los módulos necesarios para operar la plataforma de forma autónoma desde el primer día. Todo lo que está fuera del alcance está explícitamente listado en la sección de Fase 2.</p>
-    </div>
-
-    <div class="modules-grid">
-      <div class="module-card">
-        <div class="module-num">01 — Usuarios</div>
-        <h4>Registro de psicólogos</h4>
-        <p>Formulario de alta → pago → estado pendiente → aprobación manual por administrador → perfil publicado automáticamente.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">02 — Perfil</div>
-        <h4>Perfil del psicólogo</h4>
-        <p>Foto, bio y especialidades. Editable por el propio psicólogo y por el administrador en cualquier momento.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">03 — Búsqueda</div>
-        <h4>Directorio de psicólogos</h4>
-        <p>Búsqueda con filtros para pacientes. Completamente gratuito — sin registro requerido para explorar.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">04 — Agenda</div>
-        <h4>Calendario de disponibilidad</h4>
-        <p>El psicólogo carga sus horarios. El paciente elige día y hora. Confirmación automática por email a ambos.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">05 — Reseñas</div>
-        <h4>Sistema de reseñas</h4>
-        <p>Los pacientes puntúan y comentan luego de una sesión. Las reseñas son visibles en el perfil del psicólogo.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">06 — Pagos</div>
-        <h4>Membresía y cobro</h4>
-        <p>Suscripción recurrente USD 40/mes vía dLocal Go. El psicólogo paga en su moneda local — semanal, mensual o anual — con gestión automática de reintentos y renovaciones.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">07 — Impago</div>
-        <h4>Período de gracia</h4>
-        <p>Si el psicólogo deja de pagar, su perfil se oculta automáticamente al vencer el período de gracia configurable.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">08 — Admin</div>
-        <h4>Panel de administración</h4>
-        <p>Gestión completa de psicólogos, pagos, turnos y solicitudes. Reporte de ingresos mensuales en tiempo real.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">09 — Migración</div>
-        <h4>Migración desde WordPress</h4>
-        <p>Importación de todos los perfiles existentes. Los usuarios migrados reciben instrucciones para nueva contraseña.</p>
-      </div>
-      <div class="module-card">
-        <div class="module-num">10 — Diseño</div>
-        <h4>Responsive completo</h4>
-        <p>Optimizado para móvil, tablet y escritorio. Carga rápida, accesible desde cualquier navegador sin instalación.</p>
-      </div>
-    </div>
-
-    <div style="margin-top:20px; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:10px; padding:20px 24px;">
-      <p style="font-size:13px; color:var(--neutral-600); margin-bottom:8px;"><strong style="color:var(--neutral-800);">Fuera del MVP — Fase 2:</strong></p>
-      <p style="font-size:13px; color:var(--neutral-600);">Videollamada integrada · App móvil nativa iOS/Android · Pasarelas de pago adicionales · Mensajería interna · Panel de analytics avanzado</p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 5. FLUJOS -->
-  <section id="flujos">
-    <div class="section-label">
-      <div class="section-number">5</div>
-      <h2 class="section-title">Flujos clave del sistema</h2>
-    </div>
-
-    <div class="flows-grid">
-      <div class="card" style="padding:24px 26px;">
-        <p style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Registro de psicólogo</p>
-        <ol style="list-style:none; display:flex; flex-direction:column; gap:8px; counter-reset: step;">
-          <li style="font-size:13px; color:var(--neutral-600); counter-increment:step; display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
-            Completa el formulario de registro
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
-            Paga USD 40 vía dLocal Go (moneda local)
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
-            Cuenta queda en estado pendiente
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
-            Admin aprueba → perfil publicado
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
-            Psicólogo recibe email de bienvenida
-          </li>
-        </ol>
-      </div>
-
-      <div class="card" style="padding:24px 26px;">
-        <p style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">Agenda de sesión</p>
-        <ol style="list-style:none; display:flex; flex-direction:column; gap:8px;">
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
-            Paciente busca y filtra psicólogos
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
-            Ve disponibilidad del psicólogo
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
-            Elige día y horario — sin pago
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
-            Email de confirmación a ambos
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
-            Sesión se coordina por Zoom/Meet
-          </li>
-        </ol>
-      </div>
-
-      <div class="card" style="padding:24px 26px;">
-        <p style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Flujo de impago</p>
-        <ol style="list-style:none; display:flex; flex-direction:column; gap:8px;">
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
-            Suscripción vence, cobro falla
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
-            Comienza el período de gracia
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
-            Psicólogo es notificado por email
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:#c0392b; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
-            Perfil se oculta automáticamente
-          </li>
-          <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
-            <span style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
-            Puede reactivar pagando en cualquier momento
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 6. CRONOGRAMA -->
-  <section id="cronograma">
-    <div class="section-label">
-      <div class="section-number">6</div>
-      <h2 class="section-title">Cronograma de desarrollo</h2>
-    </div>
-
-    <div class="card">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-week">Semana 1</div>
-          <h4>Definición y diseño</h4>
-          <p>Diseño de la interfaz de usuario, arquitectura de base de datos, definición de flujos y aprobación del cliente.</p>
+    <!-- COVER -->
+    <div class="cover">
+      <div class="cover-tag">Propuesta Comercial Confidencial</div>
+      <h1>Plataforma a medida para<br /><span>Entretiempos Psicología</span></h1>
+      <p class="cover-sub">Rediseño completo de infraestructura digital — migración desde WordPress hacia una plataforma
+        propia, estable y escalable.</p>
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <label>Cliente</label>
+          <span>Lizette Margulis</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-week">Semanas 2 – 3</div>
-          <h4>Backend — Autenticación, base de datos, roles y pagos</h4>
-          <p>Configuración de Supabase, sistema de roles (psicólogo / paciente / admin), integración de dLocal Go con suscripciones recurrentes y webhooks de pagos.</p>
+        <div class="cover-meta-item">
+          <label>Desarrollador</label>
+          <span>Mauricio Sawicki</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-week">Semanas 4 – 5</div>
-          <h4>Frontend — Perfiles, directorio, agenda, reseñas y panel admin</h4>
-          <p>Desarrollo completo de la interfaz: directorio, perfil de psicólogo, sistema de agenda, reseñas y panel de administración.</p>
+        <div class="cover-meta-item">
+          <label>Fecha</label>
+          <span>Abril 2026</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-week">Semana 6</div>
-          <h4>Migración de datos desde WordPress</h4>
-          <p>Importación de perfiles de psicólogos existentes, sincronización de membresías activas y comunicación a usuarios migrados.</p>
+        <div class="cover-meta-item">
+          <label>Versión</label>
+          <span>v1.0</span>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-week">Semana 7</div>
-          <h4>Testing, ajustes y deploy a producción</h4>
-          <p>Pruebas end-to-end, corrección de errores, configuración DNS, deploy final y traspaso de la plataforma al cliente.</p>
+        <div class="cover-meta-item">
+          <label>LinkedIn</label>
+          <a href="https://www.linkedin.com/in/mausa10/" target="_blank" rel="noopener"
+            style="font-size:14px; color:rgba(255,255,255,0.85); font-weight:500; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.25);">linkedin.com/in/mausa10</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. CONTEXTO -->
+    <section id="problema">
+      <div class="section-label">
+        <div class="section-number">1</div>
+        <h2 class="section-title">El problema actual</h2>
+      </div>
+
+      <div class="card" style="margin-bottom:16px">
+        <p>La plataforma actual de Entretiempos Psicología corre sobre <strong>WordPress + WooCommerce + Ultimate Member
+            Pro + PayPal</strong>. Esta combinación acumula conflictos constantes entre plugins, genera errores
+          difíciles de reproducir y requiere intervención técnica permanente sin garantía de resolución.</p>
+        <p>Más de +600.000 seguidores en Instagram y una presencia real en Uruguay y LatAm merecen una infraestructura
+          que funcione de manera confiable, sin parches ni workarounds.</p>
+      </div>
+
+      <div class="problem-card">
+        <h3>Síntomas identificados</h3>
+        <ul class="problem-list">
+          <li><span>Cuando un psicólogo paga la membresía, el rol "Psicólogo" no se asigna automáticamente — falla la
+              sincronización entre WooCommerce Subscriptions y Ultimate Member.</span></li>
+          <li><span>El stack de plugins genera conflictos de versiones que se vuelven impredecibles con cada
+              actualización.</span></li>
+          <li><span>El costo de infraestructura actual ronda los <strong>USD 500/año</strong> en licencias y hosting de
+              WordPress.</span></li>
+          <li><span>Cada intervención técnica requiere un especialista en WordPress, no en el negocio real de la
+              plataforma.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 2. SOLUCIÓN -->
+    <section id="solucion">
+      <div class="section-label">
+        <div class="section-number">2</div>
+        <h2 class="section-title">La solución propuesta</h2>
+      </div>
+
+      <div class="card" style="margin-bottom:20px">
+        <p>Desarrollar una <strong>plataforma web a medida</strong>, construida desde cero con tecnologías modernas y
+          probadas. Esto elimina la dependencia de plugins de terceros, da control total sobre el comportamiento del
+          sistema y reduce el costo operativo anual de forma drástica.</p>
+        <p>La nueva plataforma es una <strong>web app responsive</strong> — accesible desde cualquier navegador,
+          optimizada para móvil, tablet y escritorio. No requiere descarga ni instalación por parte del usuario.</p>
+      </div>
+
+      <div class="solution-highlight">
+        <div class="solution-item">
+          <div class="icon">🔒</div>
+          <h4>Control total del sistema</h4>
+          <p>Sin plugins ni dependencias externas. Cada comportamiento es código propio, testeable y predecible.</p>
+        </div>
+        <div class="solution-item">
+          <div class="icon">💳</div>
+          <h4>Pagos recurrentes reales</h4>
+          <p>dLocal Go gestiona suscripciones automáticas en moneda local para toda LatAm y EEUU. Sin intermediarios
+            complejos.</p>
+        </div>
+        <div class="solution-item">
+          <div class="icon">📉</div>
+          <h4>Costo reducido 84%</h4>
+          <p>De USD 500/año a USD 120/año de infraestructura — sin licencias de plugins ni hosting caro.</p>
+        </div>
+        <div class="solution-item">
+          <div class="icon">🚀</div>
+          <h4>Escalable desde el día 1</h4>
+          <p>Arquitectura preparada para Fase 2: videollamadas, app móvil, Mercado Pago y mensajería interna.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 3. STACK -->
+    <section id="stack">
+      <div class="section-label">
+        <div class="section-number">3</div>
+        <h2 class="section-title">Stack tecnológico</h2>
+      </div>
+
+      <div class="card" style="padding:0; overflow:hidden;">
+        <table class="stack-table">
+          <thead>
+            <tr>
+              <th>Tecnología</th>
+              <th>Rol en el proyecto</th>
+              <th>Por qué</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tech-badge">Next.js</span></td>
+              <td>Frontend — web app responsive</td>
+              <td>El estándar de la industria para apps React en producción. Deploy instantáneo en Vercel.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-badge">Supabase</span></td>
+              <td>Base de datos, autenticación y storage</td>
+              <td>PostgreSQL gestionado + auth robusta + storage para fotos de perfil, sin configuración compleja.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-badge">Vercel</span></td>
+              <td>Deploy y hosting</td>
+              <td>Integración nativa con Next.js. CDN global, SSL automático, deploys en segundos.</td>
+            </tr>
+            <tr>
+              <td><span class="tech-badge">dLocal Go</span></td>
+              <td>Pagos y suscripciones recurrentes</td>
+              <td>Cubre toda LatAm y EEUU con métodos de pago locales. Suscripciones automáticas nativas: el psicólogo
+                paga en su moneda local y Entretiempos recibe en la moneda de la empresa.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 4. ALCANCE -->
+    <section id="alcance">
+      <div class="section-label">
+        <div class="section-number">4</div>
+        <h2 class="section-title">Alcance del MVP</h2>
+      </div>
+
+      <div class="card" style="margin-bottom:20px">
+        <p>El MVP (producto mínimo viable) incluye todos los módulos necesarios para operar la plataforma de forma
+          autónoma desde el primer día. Todo lo que está fuera del alcance está explícitamente listado en la sección de
+          Fase 2.</p>
+      </div>
+
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-num">01 — Usuarios</div>
+          <h4>Registro de psicólogos</h4>
+          <p>Formulario de alta → pago → estado pendiente → aprobación manual por administrador → perfil publicado
+            automáticamente.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">02 — Perfil</div>
+          <h4>Perfil del psicólogo</h4>
+          <p>Foto, bio y especialidades. Editable por el propio psicólogo y por el administrador en cualquier momento.
+          </p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">03 — Búsqueda</div>
+          <h4>Directorio de psicólogos</h4>
+          <p>Búsqueda con filtros para pacientes. Completamente gratuito — sin registro requerido para explorar.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">04 — Agenda</div>
+          <h4>Calendario de disponibilidad</h4>
+          <p>El psicólogo carga sus horarios. El paciente elige día y hora. Confirmación automática por email a ambos.
+          </p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">05 — Reseñas</div>
+          <h4>Sistema de reseñas</h4>
+          <p>Los pacientes puntúan y comentan luego de una sesión. Las reseñas son visibles en el perfil del psicólogo.
+          </p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">06 — Pagos</div>
+          <h4>Membresía y cobro</h4>
+          <p>Suscripción recurrente USD 40/mes vía dLocal Go. El psicólogo paga en su moneda local — semanal, mensual o
+            anual — con gestión automática de reintentos y renovaciones.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">07 — Impago</div>
+          <h4>Período de gracia</h4>
+          <p>Si el psicólogo deja de pagar, su perfil se oculta automáticamente al vencer el período de gracia
+            configurable.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">08 — Admin</div>
+          <h4>Panel de administración</h4>
+          <p>Gestión completa de psicólogos, pagos, turnos y solicitudes. Reporte de ingresos mensuales en tiempo real.
+          </p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">09 — Migración</div>
+          <h4>Migración desde WordPress</h4>
+          <p>Importación de todos los perfiles existentes. Los usuarios migrados reciben instrucciones para nueva
+            contraseña.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-num">10 — Diseño</div>
+          <h4>Responsive completo</h4>
+          <p>Optimizado para móvil, tablet y escritorio. Carga rápida, accesible desde cualquier navegador sin
+            instalación.</p>
         </div>
       </div>
 
-      <div class="timeline-footer-row" style="margin-top:32px; padding-top:24px; border-top:1px solid var(--neutral-200); display:flex; align-items:center; justify-content:space-between;">
+      <div
+        style="margin-top:20px; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:10px; padding:20px 24px;">
+        <p style="font-size:13px; color:var(--neutral-600); margin-bottom:8px;"><strong
+            style="color:var(--neutral-800);">Fuera del MVP — Fase 2:</strong></p>
+        <p style="font-size:13px; color:var(--neutral-600);">Videollamada integrada · App móvil nativa iOS/Android ·
+          Pasarelas de pago adicionales · Mensajería interna · Panel de analytics avanzado</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 5. FLUJOS -->
+    <section id="flujos">
+      <div class="section-label">
+        <div class="section-number">5</div>
+        <h2 class="section-title">Flujos clave del sistema</h2>
+      </div>
+
+      <div class="flows-grid">
+        <div class="card" style="padding:24px 26px;">
+          <p
+            style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">
+            Registro de psicólogo</p>
+          <ol style="list-style:none; display:flex; flex-direction:column; gap:8px; counter-reset: step;">
+            <li
+              style="font-size:13px; color:var(--neutral-600); counter-increment:step; display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
+              Completa el formulario de registro
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
+              Paga USD 40 vía dLocal Go (moneda local)
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
+              Cuenta queda en estado pendiente
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
+              Admin aprueba → perfil publicado
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
+              Psicólogo recibe email de bienvenida
+            </li>
+          </ol>
+        </div>
+
+        <div class="card" style="padding:24px 26px;">
+          <p
+            style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--sage); margin-bottom:12px;">
+            Agenda de sesión</p>
+          <ol style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
+              Paciente busca y filtra psicólogos
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
+              Ve disponibilidad del psicólogo
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--navy); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
+              Elige día y horario — sin pago
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
+              Email de confirmación a ambos
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
+              Sesión se coordina por Zoom/Meet
+            </li>
+          </ol>
+        </div>
+
+        <div class="card" style="padding:24px 26px;">
+          <p
+            style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">
+            Flujo de impago</p>
+          <ol style="list-style:none; display:flex; flex-direction:column; gap:8px;">
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">1</span>
+              Suscripción vence, cobro falla
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">2</span>
+              Comienza el período de gracia
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:#e8a84a; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">3</span>
+              Psicólogo es notificado por email
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:#c0392b; color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">4</span>
+              Perfil se oculta automáticamente
+            </li>
+            <li style="font-size:13px; color:var(--neutral-600); display:flex; gap:8px; align-items:flex-start;">
+              <span
+                style="flex-shrink:0; width:18px; height:18px; background:var(--sage); color:white; border-radius:50%; font-size:10px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:1px;">5</span>
+              Puede reactivar pagando en cualquier momento
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 6. CRONOGRAMA -->
+    <section id="cronograma">
+      <div class="section-label">
+        <div class="section-number">6</div>
+        <h2 class="section-title">Cronograma de desarrollo</h2>
+      </div>
+
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-week">Semana 1</div>
+            <h4>Definición y diseño</h4>
+            <p>Diseño de la interfaz de usuario, arquitectura de base de datos, definición de flujos y aprobación del
+              cliente.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-week">Semanas 2 – 3</div>
+            <h4>Backend — Autenticación, base de datos, roles y pagos</h4>
+            <p>Configuración de Supabase, sistema de roles (psicólogo / paciente / admin), integración de dLocal Go con
+              suscripciones recurrentes y webhooks de pagos.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-week">Semanas 4 – 5</div>
+            <h4>Frontend — Perfiles, directorio, agenda, reseñas y panel admin</h4>
+            <p>Desarrollo completo de la interfaz: directorio, perfil de psicólogo, sistema de agenda, reseñas y panel
+              de administración.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-week">Semana 6</div>
+            <h4>Migración de datos desde WordPress</h4>
+            <p>Importación de perfiles de psicólogos existentes, sincronización de membresías activas y comunicación a
+              usuarios migrados.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-week">Semana 7</div>
+            <h4>Testing, ajustes y deploy a producción</h4>
+            <p>Pruebas end-to-end, corrección de errores, configuración DNS, deploy final y traspaso de la plataforma al
+              cliente.</p>
+          </div>
+        </div>
+
+        <div class="timeline-footer-row"
+          style="margin-top:32px; padding-top:24px; border-top:1px solid var(--neutral-200); display:flex; align-items:center; justify-content:space-between;">
+          <div>
+            <p
+              style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin-bottom:4px;">
+              Duración total estimada</p>
+            <p style="font-size:22px; font-weight:700; color:var(--navy);">7 semanas</p>
+          </div>
+          <div style="text-align:right;">
+            <p
+              style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin-bottom:4px;">
+              Inicio estimado</p>
+            <p style="font-size:14px; font-weight:600; color:var(--neutral-800);">A coordinar tras aceptación</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 7. INVERSIÓN -->
+    <section id="inversion">
+      <div class="section-label">
+        <div class="section-number">7</div>
+        <h2 class="section-title">Inversión</h2>
+      </div>
+
+      <div class="pricing-grid" style="margin-bottom:20px;">
+        <div class="pricing-main">
+          <p class="price-label">Desarrollo del MVP</p>
+          <p class="price">$3.500</p>
+          <p class="price-sub">USD — pago único de desarrollo</p>
+          <div class="pricing-splits">
+            <div class="split-row">
+              <span>Pago 1 — al iniciar</span>
+              <span>USD 1.000</span>
+            </div>
+            <div class="split-row">
+              <span>Pago 2 — al entregar</span>
+              <span>USD 2.500</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pricing-secondary">
+          <div class="pricing-card-sm">
+            <p class="price-label">Mantenimiento mensual</p>
+            <p class="price-sm">$150</p>
+            <p class="price-desc">USD/mes — soporte técnico continuo, actualizaciones de seguridad e infraestructura.
+            </p>
+          </div>
+          <div class="pricing-card-sm">
+            <p class="price-label">Infraestructura anual (nueva)</p>
+            <p class="price-sm">$120</p>
+            <p class="price-desc">USD/año — Vercel + Supabase. Antes USD 500/año con WordPress y licencias de plugins.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="savings-banner">
+        <div class="savings-icon">💡</div>
+        <p>Solo en infraestructura, la nueva plataforma genera un <strong>ahorro de USD 380/año</strong> respecto al
+          stack actual de WordPress. En 3 años, el ahorro cubre el 33% del costo de desarrollo.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 8. CONDICIONES -->
+    <section id="condiciones">
+      <div class="section-label">
+        <div class="section-number">8</div>
+        <h2 class="section-title">Condiciones y garantías</h2>
+      </div>
+
+      <div class="card">
+        <ul class="conditions-list">
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El primer pago de <strong>USD 1.000</strong> se realiza al inicio del proyecto y cubre el costo de
+              diseño, arquitectura e inicio de desarrollo.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El segundo pago de <strong>USD 2.500</strong> se realiza contra entrega de la plataforma funcional y
+              aprobada por el cliente, previo al deploy en producción.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El alcance del MVP queda definido en la Sección 4 de este documento. Cualquier funcionalidad adicional
+              fuera de ese alcance implica una cotización separada.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El cronograma de <strong>7 semanas</strong> es estimado y asume disponibilidad del cliente para
+              revisiones y aprobaciones dentro de las 24–48hs de cada entrega parcial.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El mantenimiento mensual de <strong>USD 150</strong> cubre soporte técnico, monitoreo, actualizaciones
+              de seguridad y pequeños ajustes. Cambios estructurales o nuevas funcionalidades se cotizan por
+              separado.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>El cliente retiene la propiedad completa del código fuente y de todos los activos digitales producidos
+              durante el desarrollo.</span>
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12">
+                <polyline points="2,6 5,9 10,3" />
+              </svg></span>
+            <span>Esta propuesta tiene vigencia de <strong>30 días</strong> desde su fecha de emisión.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 9. ACEPTACIÓN -->
+    <div id="aceptacion" class="acceptance-section">
+      <div class="acceptance-header">
+        <div class="icon-box">✍️</div>
         <div>
-          <p style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin-bottom:4px;">Duración total estimada</p>
-          <p style="font-size:22px; font-weight:700; color:var(--navy);">7 semanas</p>
-        </div>
-        <div style="text-align:right;">
-          <p style="font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--neutral-400); margin-bottom:4px;">Inicio estimado</p>
-          <p style="font-size:14px; font-weight:600; color:var(--neutral-800);">A coordinar tras aceptación</p>
+          <h2>Aceptación de la propuesta</h2>
+          <p>Al completar este formulario, el cliente confirma haber leído y aceptado los términos de la propuesta.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <div class="divider"></div>
+      <div class="acceptance-summary">
+        <div class="acceptance-summary-item">
+          <label>Inversión total</label>
+          <span>USD 3.500</span>
+        </div>
+        <div class="acceptance-summary-item">
+          <label>Duración estimada</label>
+          <span>7 semanas</span>
+        </div>
+        <div class="acceptance-summary-item">
+          <label>Vigencia de la propuesta</label>
+          <span>30 días</span>
+        </div>
+      </div>
 
-  <!-- 7. INVERSIÓN -->
-  <section id="inversion">
-    <div class="section-label">
-      <div class="section-number">7</div>
-      <h2 class="section-title">Inversión</h2>
-    </div>
-
-    <div class="pricing-grid" style="margin-bottom:20px;">
-      <div class="pricing-main">
-        <p class="price-label">Desarrollo del MVP</p>
-        <p class="price">$3.500</p>
-        <p class="price-sub">USD — pago único de desarrollo</p>
-        <div class="pricing-splits">
-          <div class="split-row">
-            <span>Pago 1 — al iniciar</span>
-            <span>USD 1.000</span>
+      <div id="form-area">
+        <div class="name-field-group">
+          <div class="field-group">
+            <label>Nombre completo</label>
+            <input type="text" id="field-name" placeholder="Ej. Ana García" autocomplete="name" />
           </div>
-          <div class="split-row">
-            <span>Pago 2 — al entregar</span>
-            <span>USD 2.500</span>
+          <div class="field-group">
+            <label>Cargo / Rol</label>
+            <input type="text" id="field-role" placeholder="Ej. Fundadora, Directora…" />
           </div>
         </div>
-      </div>
 
-      <div class="pricing-secondary">
-        <div class="pricing-card-sm">
-          <p class="price-label">Mantenimiento mensual</p>
-          <p class="price-sm">$150</p>
-          <p class="price-desc">USD/mes — soporte técnico continuo, actualizaciones de seguridad e infraestructura.</p>
+        <div class="field-group" style="margin-bottom:20px;">
+          <label>Correo electrónico</label>
+          <input type="email" id="field-email" placeholder="tu@email.com" autocomplete="email" />
         </div>
-        <div class="pricing-card-sm">
-          <p class="price-label">Infraestructura anual (nueva)</p>
-          <p class="price-sm">$80</p>
-          <p class="price-desc">USD/año — Vercel + Supabase. Antes USD 500/año con WordPress y licencias de plugins.</p>
+
+        <div class="checkbox-row" id="checkbox-row" onclick="toggleCheckbox()">
+          <div class="custom-checkbox" id="custom-checkbox">
+            <svg viewBox="0 0 12 12">
+              <polyline points="2,6 5,9 10,3" />
+            </svg>
+          </div>
+          <div class="checkbox-text">
+            He leído en su totalidad esta propuesta comercial y <strong>acepto los términos, el alcance del MVP, el
+              cronograma y los honorarios</strong> descriptos en el documento. Entiendo que esta aceptación tiene valor
+            contractual entre las partes.
+          </div>
         </div>
+
+        <button class="accept-btn" id="accept-btn" onclick="submitAcceptance()" disabled>
+          Confirmar aceptación de la propuesta
+        </button>
       </div>
-    </div>
 
-    <div class="savings-banner">
-      <div class="savings-icon">💡</div>
-      <p>Solo en infraestructura, la nueva plataforma genera un <strong>ahorro de USD 420/año</strong> respecto al stack actual de WordPress. En 3 años, el ahorro cubre el 36% del costo de desarrollo.</p>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 8. CONDICIONES -->
-  <section id="condiciones">
-    <div class="section-label">
-      <div class="section-number">8</div>
-      <h2 class="section-title">Condiciones y garantías</h2>
-    </div>
-
-    <div class="card">
-      <ul class="conditions-list">
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El primer pago de <strong>USD 1.000</strong> se realiza al inicio del proyecto y cubre el costo de diseño, arquitectura e inicio de desarrollo.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El segundo pago de <strong>USD 2.500</strong> se realiza contra entrega de la plataforma funcional y aprobada por el cliente, previo al deploy en producción.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El alcance del MVP queda definido en la Sección 4 de este documento. Cualquier funcionalidad adicional fuera de ese alcance implica una cotización separada.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El cronograma de <strong>7 semanas</strong> es estimado y asume disponibilidad del cliente para revisiones y aprobaciones dentro de las 24–48hs de cada entrega parcial.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El mantenimiento mensual de <strong>USD 150</strong> cubre soporte técnico, monitoreo, actualizaciones de seguridad y pequeños ajustes. Cambios estructurales o nuevas funcionalidades se cotizan por separado.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>El cliente retiene la propiedad completa del código fuente y de todos los activos digitales producidos durante el desarrollo.</span>
-        </li>
-        <li>
-          <span class="check-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>
-          <span>Esta propuesta tiene vigencia de <strong>30 días</strong> desde su fecha de emisión.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- 9. ACEPTACIÓN -->
-  <div id="aceptacion" class="acceptance-section">
-    <div class="acceptance-header">
-      <div class="icon-box">✍️</div>
-      <div>
-        <h2>Aceptación de la propuesta</h2>
-        <p>Al completar este formulario, el cliente confirma haber leído y aceptado los términos de la propuesta.</p>
-      </div>
-    </div>
-
-    <div class="acceptance-summary">
-      <div class="acceptance-summary-item">
-        <label>Inversión total</label>
-        <span>USD 3.500</span>
-      </div>
-      <div class="acceptance-summary-item">
-        <label>Duración estimada</label>
-        <span>7 semanas</span>
-      </div>
-      <div class="acceptance-summary-item">
-        <label>Vigencia de la propuesta</label>
-        <span>30 días</span>
-      </div>
-    </div>
-
-    <div id="form-area">
-      <div class="name-field-group">
-        <div class="field-group">
-          <label>Nombre completo</label>
-          <input type="text" id="field-name" placeholder="Ej. Ana García" autocomplete="name" />
+      <div class="success-state" id="success-state">
+        <div class="success-checkmark">
+          <svg viewBox="0 0 30 30">
+            <polyline points="5,15 12,22 25,8" />
+          </svg>
         </div>
-        <div class="field-group">
-          <label>Cargo / Rol</label>
-          <input type="text" id="field-role" placeholder="Ej. Fundadora, Directora…" />
-        </div>
+        <h3>¡Propuesta aceptada!</h3>
+        <p id="success-name-msg">Gracias. A continuación nos pondremos en contacto para dar inicio al proyecto.</p>
+        <div class="success-timestamp" id="success-timestamp"></div>
       </div>
-
-      <div class="field-group" style="margin-bottom:20px;">
-        <label>Correo electrónico</label>
-        <input type="email" id="field-email" placeholder="tu@email.com" autocomplete="email" />
-      </div>
-
-      <div class="checkbox-row" id="checkbox-row" onclick="toggleCheckbox()">
-        <div class="custom-checkbox" id="custom-checkbox">
-          <svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg>
-        </div>
-        <div class="checkbox-text">
-          He leído en su totalidad esta propuesta comercial y <strong>acepto los términos, el alcance del MVP, el cronograma y los honorarios</strong> descriptos en el documento. Entiendo que esta aceptación tiene valor contractual entre las partes.
-        </div>
-      </div>
-
-      <button class="accept-btn" id="accept-btn" onclick="submitAcceptance()" disabled>
-        Confirmar aceptación de la propuesta
-      </button>
     </div>
 
-    <div class="success-state" id="success-state">
-      <div class="success-checkmark">
-        <svg viewBox="0 0 30 30"><polyline points="5,15 12,22 25,8"/></svg>
-      </div>
-      <h3>¡Propuesta aceptada!</h3>
-      <p id="success-name-msg">Gracias. A continuación nos pondremos en contacto para dar inicio al proyecto.</p>
-      <div class="success-timestamp" id="success-timestamp"></div>
-    </div>
   </div>
 
-</div>
+  <footer>
+    <strong>Mauricio Sawicki</strong> · mau.sawicki@gmail.com ·
+    <a href="https://www.linkedin.com/in/mausa10/" target="_blank" rel="noopener"
+      style="color:var(--neutral-400); text-decoration:none; border-bottom:1px solid var(--neutral-200);">LinkedIn</a>
+    · Propuesta confidencial para Entretiempos Psicología · Abril 2026
+  </footer>
 
-<footer>
-  <strong>Mauricio Sawicki</strong> · mau.sawicki@gmail.com ·
-  <a href="https://www.linkedin.com/in/mausa10/" target="_blank" rel="noopener" style="color:var(--neutral-400); text-decoration:none; border-bottom:1px solid var(--neutral-200);">LinkedIn</a>
-  · Propuesta confidencial para Entretiempos Psicología · Abril 2026
-</footer>
-
-<script>
-  // Progress bar
-  window.addEventListener('scroll', () => {
-    const doc = document.documentElement;
-    const scrolled = doc.scrollTop || document.body.scrollTop;
-    const total = doc.scrollHeight - doc.clientHeight;
-    document.getElementById('progress-bar').style.width = (scrolled / total * 100) + '%';
-  });
-
-  // Checkbox logic
-  let isChecked = false;
-
-  function toggleCheckbox() {
-    isChecked = !isChecked;
-    const box = document.getElementById('custom-checkbox');
-    const row = document.getElementById('checkbox-row');
-    box.classList.toggle('checked', isChecked);
-    row.classList.toggle('checked', isChecked);
-    validateForm();
-  }
-
-  function validateForm() {
-    const name = document.getElementById('field-name').value.trim();
-    const email = document.getElementById('field-email').value.trim();
-    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    const btn = document.getElementById('accept-btn');
-    btn.disabled = !(name.length > 1 && emailValid && isChecked);
-  }
-
-  ['field-name', 'field-email', 'field-role'].forEach(id => {
-    document.getElementById(id).addEventListener('input', validateForm);
-  });
-
-  function submitAcceptance() {
-    const name = document.getElementById('field-name').value.trim();
-    const email = document.getElementById('field-email').value.trim();
-    const role = document.getElementById('field-role').value.trim();
-
-    const now = new Date();
-    const formatted = now.toLocaleString('es-UY', {
-      day: '2-digit', month: 'long', year: 'numeric',
-      hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const scrolled = doc.scrollTop || document.body.scrollTop;
+      const total = doc.scrollHeight - doc.clientHeight;
+      document.getElementById('progress-bar').style.width = (scrolled / total * 100) + '%';
     });
 
-    document.getElementById('success-name-msg').textContent =
-      `${name}${role ? ' (' + role + ')' : ''} — ${email} — Gracias, nos pondremos en contacto para coordinar el inicio del proyecto.`;
-    document.getElementById('success-timestamp').textContent = `Aceptado el ${formatted}`;
+    // Checkbox logic
+    let isChecked = false;
 
-    document.getElementById('form-area').style.display = 'none';
-    document.getElementById('success-state').classList.add('visible');
-    document.querySelector('.acceptance-section').classList.add('accepted');
+    function toggleCheckbox() {
+      isChecked = !isChecked;
+      const box = document.getElementById('custom-checkbox');
+      const row = document.getElementById('checkbox-row');
+      box.classList.toggle('checked', isChecked);
+      row.classList.toggle('checked', isChecked);
+      validateForm();
+    }
 
-    // WhatsApp redirect con mensaje prearmado
-    const rolePart = role ? `\n• Cargo: ${role}` : '';
-    const msg = `Hola Mauricio! 👋 Acabo de aceptar la propuesta comercial de Entretiempos Psicología.\n\nMis datos:\n• Nombre: ${name}${rolePart}\n• Email: ${email}\n\nQuedo a disposición para coordinar el inicio del proyecto. 🚀`;
-    const waUrl = `https://wa.me/5492994081375?text=${encodeURIComponent(msg)}`;
+    function validateForm() {
+      const name = document.getElementById('field-name').value.trim();
+      const email = document.getElementById('field-email').value.trim();
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const btn = document.getElementById('accept-btn');
+      btn.disabled = !(name.length > 1 && emailValid && isChecked);
+    }
 
-    setTimeout(() => {
-      document.getElementById('success-state').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 100);
+    ['field-name', 'field-email', 'field-role'].forEach(id => {
+      document.getElementById(id).addEventListener('input', validateForm);
+    });
 
-    setTimeout(() => {
-      window.open(waUrl, '_blank');
-    }, 1200);
-  }
-</script>
+    function submitAcceptance() {
+      const name = document.getElementById('field-name').value.trim();
+      const email = document.getElementById('field-email').value.trim();
+      const role = document.getElementById('field-role').value.trim();
+
+      const now = new Date();
+      const formatted = now.toLocaleString('es-UY', {
+        day: '2-digit', month: 'long', year: 'numeric',
+        hour: '2-digit', minute: '2-digit', timeZoneName: 'short'
+      });
+
+      document.getElementById('success-name-msg').textContent =
+        `${name}${role ? ' (' + role + ')' : ''} — ${email} — Gracias, nos pondremos en contacto para coordinar el inicio del proyecto.`;
+      document.getElementById('success-timestamp').textContent = `Aceptado el ${formatted}`;
+
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('success-state').classList.add('visible');
+      document.querySelector('.acceptance-section').classList.add('accepted');
+
+      // WhatsApp redirect con mensaje formal prearmado
+      const rolePart = role ? `\nCargo / Rol: ${role}` : '';
+      const msg = `Confirmo formalmente mi aceptación de la propuesta comercial para el desarrollo de la plataforma a medida de Entretiempos Psicología.\n\n— DATOS DEL ACEPTANTE —\nNombre completo: ${name}${rolePart}\nCorreo electrónico: ${email}\nFecha y hora de aceptación: ${formatted}\n\n— RESUMEN DE LA PROPUESTA ACEPTADA —\nInversión total de desarrollo: USD 3.500\n  • Pago 1 (al iniciar): USD 1.000\n  • Pago 2 (al entregar): USD 2.500\nMantenimiento mensual: USD 150/mes\nDuración estimada del proyecto: 7 semanas\nVigencia de la propuesta: 30 días\n\n`;
+      const waUrl = `https://wa.me/5492994081375?text=${encodeURIComponent(msg)}`;
+
+      setTimeout(() => {
+        document.getElementById('success-state').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+
+      setTimeout(() => {
+        window.open(waUrl, '_blank');
+      }, 1200);
+    }
+  </script>
 </body>
+
 </html>
