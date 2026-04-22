@@ -1823,7 +1823,11 @@
       }, 100);
 
       setTimeout(() => {
-        window.open(waUrl, '_blank');
+        if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+          window.location.href = waUrl;
+        } else {
+          window.open(waUrl, '_blank');
+        }
       }, 1200);
     }
   </script>
