@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relevamiento — Entretiempos Psicología</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7A9E7E;
+    --sage-light: #EEF4EF;
+    --sage-dark: #4E7054;
+    --cream: #FAF8F4;
+    --warm-gray: #6B6560;
+    --dark: #2C2825;
+    --accent: #C4875A;
+    --border: #DDD8D0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { color-scheme: light only; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: var(--sage-dark);
+    padding: 48px 32px 40px;
+    text-align: center;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: #B8D4BA;
+  }
+
+  .hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 15px;
+    font-weight: 300;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .progress-bar {
+    height: 4px;
+    background: rgba(255,255,255,0.15);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    display: none;
+    animation: fadeUp 0.4s ease forwards;
+  }
+
+  .section.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 8px;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: var(--sage);
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .section-desc {
+    font-size: 13px;
+    color: var(--warm-gray);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .question {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+    transition: border-color 0.2s;
+  }
+
+  .question:focus-within {
+    border-color: var(--sage);
+  }
+
+  .question-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .question-label span {
+    display: inline-block;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+  }
+
+  /* Radio / Checkbox options */
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .options.horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 14px;
+    color: var(--dark);
+    user-select: none;
+  }
+
+  .option:hover {
+    border-color: var(--sage);
+    background: var(--sage-light);
+  }
+
+  .option input { display: none; }
+
+  .option.selected {
+    border-color: var(--sage-dark);
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    font-weight: 500;
+  }
+
+  .option .check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+  }
+
+  .option.selected .check {
+    background: var(--sage-dark);
+    border-color: var(--sage-dark);
+  }
+
+  .option.selected .check::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .option.checkbox .check { border-radius: 4px; }
+
+  .option.checkbox.selected .check::after {
+    content: '✓';
+    font-size: 11px;
+    border-radius: 0;
+    background: none;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  /* Textarea */
+  textarea {
+    width: 100%;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    resize: vertical;
+    min-height: 80px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s;
+    line-height: 1.5;
+  }
+
+  textarea:focus { border-color: var(--sage); }
+  textarea::placeholder { color: #BDB8B2; }
+
+  /* Navigation */
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: var(--sage-dark);
+    color: #fff;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .btn-primary:hover { background: var(--dark); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--warm-gray);
+    border: 1.5px solid var(--border);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--dark);
+    color: var(--dark);
+  }
+
+  .step-indicator {
+    font-size: 13px;
+    color: var(--warm-gray);
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  /* Result screen */
+  .result-screen {
+    display: none;
+    text-align: center;
+    padding: 48px 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .result-screen.active { display: block; }
+
+  .result-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--sage-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 32px;
+  }
+
+  .result-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: var(--dark);
+  }
+
+  .result-desc {
+    font-size: 15px;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    max-width: 400px;
+    margin: 0 auto 32px;
+  }
+
+  .result-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .result-box h3 {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--warm-gray);
+    margin-bottom: 16px;
+  }
+
+  .answer-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--sage-light);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .answer-item:last-child { border-bottom: none; }
+  .answer-q { color: var(--warm-gray); margin-bottom: 3px; font-size: 12px; }
+  .answer-a { color: var(--dark); font-weight: 500; }
+
+  .copy-btn {
+    background: var(--dark);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 8px;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+  }
+
+  .copy-btn:hover { background: var(--sage-dark); }
+
+  @media (max-width: 480px) {
+    .options.horizontal { flex-direction: column; }
+    .hero { padding: 36px 20px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">Entretiempos Psicología</div>
+  <h1>Contanos cómo <em>funciona</em><br>tu plataforma hoy</h1>
+  <p>Unas pocas preguntas para entender bien qué necesitás y poder diseñar la solución ideal para vos.</p>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="container">
+
+  <!-- SECCIÓN 1: REGISTRO Y APROBACIÓN -->
+  <div class="section active" id="section-1">
+    <div class="section-tag">Bloque 1 de 4</div>
+    <div class="section-title">Registro y aprobación de psicólogos</div>
+    <div class="section-desc">Cómo entra un psicólogo nuevo a la plataforma.</div>
+
+    <div class="question">
+      <div class="question-label">Cuando un psicólogo se registra, ¿vos lo aprobás antes de que aparezca en la plataforma? <span>una opción</span></div>
+      <div class="options" data-name="q1">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q1"><div class="check"></div>Sí, primero lo reviso y apruebo yo manualmente</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q1"><div class="check"></div>No, si paga la membresía queda activo automáticamente</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q1"><div class="check"></div>Mixto: paga y queda pendiente hasta que yo apruebo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿El psicólogo puede editar su propio perfil (foto, bio, especialidades)? <span>una opción</span></div>
+      <div class="options" data-name="q2">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q2"><div class="check"></div>Sí, lo edita él mismo desde su cuenta</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q2"><div class="check"></div>No, lo cargo yo desde el panel de admin</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q2"><div class="check"></div>Una mezcla de los dos</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Hay algún período de prueba gratuito para psicólogos nuevos? <span>una opción</span></div>
+      <div class="options" data-name="q3">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q3"><div class="check"></div>No, pagan desde el primer día</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q3"><div class="check"></div>Sí, tienen X días gratis antes de cobrar</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q3"><div class="check"></div>No tengo esto pero me gustaría tenerlo</label>
+      </div>
+    </div>
+
+    <div class="nav">
+      <div class="step-indicator">1 / 4</div>
+      <button class="btn btn-primary" onclick="nextSection(1)">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 2: PACIENTES Y AGENDA -->
+  <div class="section" id="section-2">
+    <div class="section-tag">Bloque 2 de 4</div>
+    <div class="section-title">Pacientes y agenda</div>
+    <div class="section-desc">Cómo funciona el proceso de agendar una sesión.</div>
+
+    <div class="question">
+      <div class="question-label">Cuando un paciente agenda, ¿cómo se entera el psicólogo? <span>podés marcar varias</span></div>
+      <div class="options" data-name="q4">
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q4"><div class="check"></div>Recibe un email automático</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q4"><div class="check"></div>Lo ve en su panel dentro de la plataforma</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q4"><div class="check"></div>El paciente lo contacta por WhatsApp o mail por afuera</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q4"><div class="check"></div>Hoy no funciona bien, es el problema</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Dónde se hacen las sesiones? <span>una opción</span></div>
+      <div class="options" data-name="q5">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q5"><div class="check"></div>En la plataforma (videollamada integrada)</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q5"><div class="check"></div>Por Zoom, Meet u otra herramienta externa</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q5"><div class="check"></div>El psicólogo decide con el paciente cómo hacerlo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿El psicólogo carga su disponibilidad horaria en algún lado? <span>una opción</span></div>
+      <div class="options" data-name="q6">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q6"><div class="check"></div>Sí, tiene un calendario dentro de la plataforma actual</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q6"><div class="check"></div>No, el paciente lo contacta y coordinan por fuera</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q6"><div class="check"></div>No existe esto hoy, pero sería muy útil tenerlo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Los pacientes pueden puntuar o dejar comentarios sobre el psicólogo? <span>una opción</span></div>
+      <div class="options" data-name="q7">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q7"><div class="check"></div>Sí, ya existe eso</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q7"><div class="check"></div>No, no tenemos eso</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q7"><div class="check"></div>No tenemos pero me gustaría incorporarlo</label>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prevSection(2)">← Atrás</button>
+      <div class="step-indicator">2 / 4</div>
+      <button class="btn btn-primary" onclick="nextSection(2)">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 3: PAGOS -->
+  <div class="section" id="section-3">
+    <div class="section-tag">Bloque 3 de 4</div>
+    <div class="section-title">Pagos y membresías</div>
+    <div class="section-desc">Cómo entra la plata y qué pasa si alguien no paga.</div>
+
+    <div class="question">
+      <div class="question-label">Además de PayPal, ¿estarías abierta a sumar otra forma de pago? <span>podés marcar varias</span></div>
+      <div class="options" data-name="q8">
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q8"><div class="check"></div>Con PayPal solo está bien por ahora</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q8"><div class="check"></div>Sí, me interesa sumar Stripe (tarjeta de crédito/débito)</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q8"><div class="check"></div>Sí, me interesa Mercado Pago para usuarios de LatAm</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q8"><div class="check"></div>No sé, me gustaría que me recomienden</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">Si un psicólogo deja de pagar, ¿qué debería pasar con su perfil? <span>una opción</span></div>
+      <div class="options" data-name="q9">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q9"><div class="check"></div>Que se oculte automáticamente sin que yo tenga que hacer nada</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q9"><div class="check"></div>Que me avise y yo decido qué hacer</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q9"><div class="check"></div>Que tenga un período de gracia antes de ocultarse</label>
+      </div>
+    </div>
+
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prevSection(3)">← Atrás</button>
+      <div class="step-indicator">3 / 4</div>
+      <button class="btn btn-primary" onclick="nextSection(3)">Siguiente →</button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN 4: ADMIN Y MIGRACIÓN -->
+  <div class="section" id="section-4">
+    <div class="section-tag">Bloque 4 de 4</div>
+    <div class="section-title">Tu panel y la migración</div>
+    <div class="section-desc">Lo que necesitás ver y controlar, y cómo manejar a los psicólogos que ya están.</div>
+
+    <div class="question">
+      <div class="question-label">¿Qué información necesitás ver en tu panel de administración? <span>podés marcar varias</span></div>
+      <div class="options" data-name="q10">
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q10"><div class="check"></div>Lista de psicólogos activos e inactivos</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q10"><div class="check"></div>Pagos recibidos y pendientes</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q10"><div class="check"></div>Turnos agendados en la plataforma</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q10"><div class="check"></div>Solicitudes de nuevos psicólogos para aprobar</label>
+        <label class="option checkbox" onclick="selectCheckbox(this, event)"><input type="checkbox" name="q10"><div class="check"></div>Reportes de ingresos mensuales</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Los psicólogos que ya están en la plataforma tienen su perfil completo (foto, bio)? <span>una opción</span></div>
+      <div class="options" data-name="q11">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q11"><div class="check"></div>Sí, la mayoría tiene el perfil completo</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q11"><div class="check"></div>Están incompletos, falta mucha info</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q11"><div class="check"></div>Es muy variado, algunos sí y otros no</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Usás la plataforma para comunicarte con los psicólogos (avisos, novedades)? <span>una opción</span></div>
+      <div class="options" data-name="q12">
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q12"><div class="check"></div>Sí, lo hago desde la plataforma actual</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q12"><div class="check"></div>No, uso email o WhatsApp por afuera</label>
+        <label class="option" onclick="selectOption(this)"><input type="radio" name="q12"><div class="check"></div>Me gustaría poder hacerlo desde la plataforma pero hoy no puedo</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <div class="question-label">¿Hay algo más que la plataforma haga hoy que sea importante y no hayamos mencionado?</div>
+      <textarea data-name="q13" placeholder="Contanos con tus palabras..." rows="3"></textarea>
+    </div>
+
+    <div class="nav">
+      <button class="btn btn-ghost" onclick="prevSection(4)">← Atrás</button>
+      <div class="step-indicator">4 / 4</div>
+      <button class="btn btn-primary" onclick="showResults()">Ver resumen ✓</button>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div class="result-screen" id="result-screen">
+    <div class="result-icon">🌿</div>
+    <div class="result-title">¡Listo, muchas gracias!</div>
+    <div class="result-desc">Con esta información podemos diseñar exactamente lo que tu plataforma necesita. Te compartimos el resumen de tus respuestas.</div>
+
+    <div class="result-box">
+      <h3>Tus respuestas</h3>
+      <div id="answers-list"></div>
+    </div>
+
+    <button class="copy-btn" onclick="copyAnswers()">📋 Copiar respuestas</button>
+  </div>
+
+</div>
+
+<script>
+  const questions = {
+    q1: "¿Aprobás manualmente a los psicólogos?",
+    q2: "¿El psicólogo edita su propio perfil?",
+    q3: "¿Hay período de prueba gratuito?",
+    q4: "¿Cómo se entera el psicólogo cuando lo agendan?",
+    q5: "¿Dónde se hacen las sesiones?",
+    q6: "¿El psicólogo carga su disponibilidad horaria?",
+    q7: "¿Los pacientes pueden puntuar al psicólogo?",
+    q8: "¿Qué formas de pago le interesan?",
+    q9: "¿Qué pasa si un psicólogo deja de pagar?",
+    q10: "¿Qué necesita ver en su panel de admin?",
+    q11: "¿Los psicólogos actuales tienen el perfil completo?",
+    q12: "¿Usa la plataforma para comunicarse con psicólogos?",
+    q13: "Funcionalidades adicionales"
+  };
+
+  const answers = {};
+  let currentSection = 1;
+  const totalSections = 4;
+
+  function selectOption(el) {
+    const container = el.closest('.options');
+    const name = container.dataset.name;
+    container.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[name] = el.querySelector('.check').nextSibling.textContent.trim();
+  }
+
+  function selectCheckbox(el, event) {
+    event.preventDefault();
+    el.classList.toggle('selected');
+    const container = el.closest('.options');
+    const name = container.dataset.name;
+    const selected = [...container.querySelectorAll('.option.selected')].map(o => o.querySelector('.check').nextSibling.textContent.trim());
+    answers[name] = selected.length ? selected.join(' / ') : '';
+  }
+
+  function updateProgress() {
+    const pct = ((currentSection - 1) / totalSections) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+  }
+
+  function nextSection(from) {
+    document.getElementById('section-' + from).classList.remove('active');
+    currentSection = from + 1;
+    document.getElementById('section-' + currentSection).classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function prevSection(from) {
+    document.getElementById('section-' + from).classList.remove('active');
+    currentSection = from - 1;
+    document.getElementById('section-' + currentSection).classList.add('active');
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function showResults() {
+    // capture textarea
+    document.querySelectorAll('textarea[data-name]').forEach(ta => {
+      if (ta.value.trim()) answers[ta.dataset.name] = ta.value.trim();
+    });
+
+    document.getElementById('section-4').classList.remove('active');
+    document.getElementById('progressFill').style.width = '100%';
+
+    const list = document.getElementById('answers-list');
+    list.innerHTML = '';
+
+    Object.entries(questions).forEach(([key, label]) => {
+      const val = answers[key] || '—';
+      list.innerHTML += `
+        <div class="answer-item">
+          <div class="answer-q">${label}</div>
+          <div class="answer-a">${val}</div>
+        </div>`;
+    });
+
+    document.getElementById('result-screen').classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function copyAnswers() {
+    let text = "RELEVAMIENTO — ENTRETIEMPOS PSICOLOGÍA\n\n";
+    Object.entries(questions).forEach(([key, label]) => {
+      text += `${label}\n→ ${answers[key] || '—'}\n\n`;
+    });
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = '✓ ¡Copiado!';
+      setTimeout(() => btn.textContent = '📋 Copiar respuestas', 2500);
+    });
+  }
+
+  updateProgress();
+</script>
+</body>
+</html>
